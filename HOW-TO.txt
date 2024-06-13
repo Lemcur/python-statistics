@@ -1,0 +1,8 @@
+Rafal Klimek
+Igor Karwacik
+
+Przed uruchomieniem trzeba zainstalowac potrzebne paczki
+```
+pip3 install pandas
+pip3 install openpyxl
+```
