@@ -1,8 +1,39 @@
-Rafal Klimek
-Igor Karwacik
+## Autorzy
+- Rafal Klimek
+- Igor Karwacik
 
+
+
+## Uruchomienie
 Przed uruchomieniem trzeba zainstalowac potrzebne paczki
 ```
-pip3 install pandas
-pip3 install openpyxl
+pip3 install pandas # potrzebna do obslugi arkuszy kalkulacyjnych (CSV/XLSX)
+pip3 install openpyxl # potrzebna dodatkowo do obslugi XLSX
 ```
+
+Nastepnie aplikację można uruchomić wchodząc do folderu głównego (w którym HOW-TO.txt się znajduje) za pomocą terminala (polecany powershell) i używając komendy:
+```
+python src/main.py
+```
+
+Aplikacja obsluguje pliki csv i xlsx, przykładowe pliki zostały podane w folderze `./fixtures`
+
+
+## Opis rozwiązania
+Rozwiązanie jest dość prostoliniowe:
+main.py - tworzymy okno GUI z 4 buttonami do wywoływania dalszych funkcji w `import_file.py`
+Tu ukłon w stronę Pana Profesora za bardzo przydatne przykładowe rozwiązanie na którym nasz GUI się wzoruje
+
+import_file.py - tu są napisane funkcje wywoływane przez przyciski z main.py - są dwie, gdyż pandas osobno obsługuje csv i excel spreadsheets.
+Alternatywnym rozwiązaniem mógłby być regex patrzący na ostatecznie wybrany file extension i rozpakowywanie danych, co pozwoliłoby na jeden przycisk zamiast 2.
+następnie to wywołuje funkcje z statistics_calculation.py
+
+statistics_calculation.py - zajmuje się też wyświetlaniem obliczeń.
+Rejestrujemy nowe okno i do niego labele/frame'y w `start_statistics_window`, następnie patrzymy na nagłówki w danych excelu/csv (1 wiersz tylko) i dla nich rejestrujemy przyciski.
+Przyciski te mają wywołać funkcję obliczającą i wyświetlającą statystyki w labelu.
+Tutaj zostało dodatkowo wymuszone na nas przekazywanie nazwy kolumny do lambdy:
+```
+lambda column=column: print_statistics(column, data, label)
+```
+by przy każdej rejestracji lambdy była odpowiednia kolumna wywoływana, zamiast zawsze tej samej.
+
