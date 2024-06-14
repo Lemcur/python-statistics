@@ -6,10 +6,10 @@ def start_statistics_window(win, data):
     pop.title("Confirmation")
     pop.geometry("700x600")
     pop.config(bg="green3")
-    label = Label(pop, text="Oblicz statystyki dla jednej z tych kolumn:", bg="green3", fg="white", font=('Aerial', 12))
+    label = Label(pop, text="Oblicz statystyki dla jednej z tych kolumn:", bg="green3", fg="white", font=('Arial', 12))
     label.pack(pady=20)
 
-    label2 = Label(pop, text="nacisnij przycisk by zobaczyc statystyki", bg="green3", fg="white", font=('Aerial', 12), height=6)
+    label2 = Label(pop, text="nacisnij przycisk by zobaczyc statystyki", bg="green3", fg="white", font=('Arial', 12), height=6)
     label2.pack(pady=20)
 
     # Add a Frame
