@@ -24,7 +24,7 @@ win = Tk()
 win.geometry("300x250")
 
 def About():
-  messagebox.showinfo('SuperSTAT', 'Statictics application using pandas')
+  messagebox.showinfo('statystyki', 'Aplikacja do obliczania statystyk z użyciem pandas')
 
 def Quit(event):
   quit()
@@ -36,8 +36,8 @@ Mlabel = Label(win, text="", font=('Arial', 14))
 Mlabel.pack(pady=40)
 
 # Create commands buttons
-ttk.Button(win, text="Browse CSV", command=lambda: import_file.browse_csv(win)).pack(**button_opt)
-ttk.Button(win, text="Browse Excel", command=lambda: import_file.browse_excel(win)).pack(**button_opt)
+ttk.Button(win, text="Szukaj CSV", command=lambda: import_file.browse_csv(win)).pack(**button_opt)
+ttk.Button(win, text="Szukaj Excel", command=lambda: import_file.browse_excel(win)).pack(**button_opt)
 ttk.Button(win, text="[ O programie: ]", command=About).pack(**button_opt)
 
 ttk.Button(win, text="[    Zamknij   ]", command=quit).pack(**button_opt)

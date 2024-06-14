@@ -6,10 +6,10 @@ def start_statistics_window(win, data):
     pop.title("Confirmation")
     pop.geometry("700x600")
     pop.config(bg="green3")
-    label = Label(pop, text="Get statistics on one of the columns:", bg="green3", fg="white", font=('Aerial', 12))
+    label = Label(pop, text="Oblicz statystyki dla jednej z tych kolumn:", bg="green3", fg="white", font=('Aerial', 12))
     label.pack(pady=20)
 
-    label2 = Label(pop, text="Press a button to learn more", bg="green3", fg="white", font=('Aerial', 12), height=6)
+    label2 = Label(pop, text="nacisnij przycisk by zobaczyc statystyki", bg="green3", fg="white", font=('Aerial', 12), height=6)
     label2.pack(pady=20)
 
     # Add a Frame
@@ -30,15 +30,15 @@ def print_statistics(column, data, label):
     statistics = calculate_statistics(data, column)
 
     if(statistics["error"]):
-        label.configure(text = "statistics for {column} cannot be calculated".format(column = column))
+        label.configure(text = " Statystyki dla {column} nie mogą zostać obliczone".format(column = column))
         return
 
     label.configure(text = """
-        SELECTED DATA: {column}
-        mean: {mean}
-        median: {median}
-        standard deviation: {deviation}
-        IQR: {IQR}
+        WYBRANA KOLUMNA: {column}
+        Srednia: {mean}
+        Mediana: {median}
+        Odchylenie standardowe: {deviation}
+        rozstep miedzycwiartkowy: {IQR}
         """.format(column = column, **statistics))
 
 

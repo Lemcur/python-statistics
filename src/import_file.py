@@ -7,8 +7,8 @@ import pandas as pd
 
 def browse_csv(win):
     filename = filedialog.askopenfilename(
-        initialdir = "/", title = "Select a CSV",
-        filetypes = (("CSV Files","*.csv"),))
+        initialdir = "/", title = "Wybierz plik CSV",
+        filetypes = (("Pliki CSV","*.csv"),))
 
     data = pd.read_csv(filename)
 
@@ -17,8 +17,8 @@ def browse_csv(win):
 
 def browse_excel(win):
     filename = filedialog.askopenfilename(
-        initialdir = "/", title = "Select an Excel spreadsheet",
-        filetypes = (("Excel Files","*.xlsx"),))
+        initialdir = "/", title = "Wybierz plik Excel",
+        filetypes = (("Pliki Excel","*.xlsx"),))
     data = pd.read_excel(filename)
 
     statistics_calculation.start_statistics_window(win, data)
